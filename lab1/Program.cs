@@ -6,20 +6,30 @@ namespace lab1
     {
         static void Main(string[] args)
         {
-            int i = 0;
+            Console.WriteLine("> [super exclusive tesla car] - { 3 bitcoins }");
+            bool buy = true;
 
-            while(i < 10000)
+            if(buy)
             {
-                Truck truck = new Truck();
-                Console.WriteLine($"[{i}] generation: {GC.GetGeneration(truck)}");
-                truck.Dispose();
-                GC.ReRegisterForFinalize(truck);
-                GC.Collect();
-                GC.WaitForPendingFinalizers();
-                i++;
+                SuperExclusiveTeslaCar car = SuperExclusiveTeslaCar.GetCar();
+                car.BeepBeep();
             }
 
-            Console.WriteLine("total memory: " + GC.GetTotalMemory(true));
+
+            // int i = 0;
+
+            // while(i < 10000)
+            // {
+            //     Truck truck = new Truck();
+            //     Console.WriteLine($"[{i}] generation: {GC.GetGeneration(truck)}");
+            //     truck.Dispose();
+            //     GC.ReRegisterForFinalize(truck);
+            //     GC.Collect();
+            //     GC.WaitForPendingFinalizers();
+            //     i++;
+            // }
+
+            // Console.WriteLine("total memory: " + GC.GetTotalMemory(true));
         }
 
     }

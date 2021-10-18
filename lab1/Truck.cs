@@ -43,6 +43,7 @@ namespace lab1
         ~Truck()
         {
             CleanUp(false);
+            System.Console.WriteLine("destructor...");
         }
     }
 
