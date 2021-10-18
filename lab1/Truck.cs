@@ -19,7 +19,6 @@ namespace lab1
 
         private bool disposed = false;
 
-
         public void Dispose()
         {
             CleanUp(true);
