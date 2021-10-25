@@ -45,7 +45,6 @@ namespace lab1
 
             System.Console.WriteLine("current station: " + currentStation);
         }
-
     }
 
 }

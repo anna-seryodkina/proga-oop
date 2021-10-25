@@ -1,6 +1,6 @@
 namespace lab1
 {
-    class Vehicle
+    abstract class Vehicle
     {
         int speed_miles;
         public string color;
@@ -23,6 +23,11 @@ namespace lab1
             this.numberOfSeats = numberOfSeats;
         }
 
+        public string Engine
+        {
+            get {return this.engineType;}
+        }
+
 
         public int Speed
         {
@@ -38,6 +43,11 @@ namespace lab1
                 }
             }
         }
+
+        abstract public void Go();
+
+        abstract public void Stop();
+
     }
 
 

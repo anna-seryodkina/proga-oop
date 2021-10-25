@@ -1,6 +1,8 @@
+using System;
+
 namespace lab1
 {
-    class ElectricCar : Car
+    class ElectricCar : Car, IElectricCar, IWheel
     {
         string maxChargingTime;
         string batteryType;
@@ -40,9 +42,38 @@ namespace lab1
             if(currentChargeLevel <= 25)
             {
                 System.Console.WriteLine($"charge level is low :((");
+
             }
 
             System.Console.WriteLine($"[{currentChargeLevel}%]");
+        }
+
+        public void Charge()
+        {
+            UpdateChargeLevel();
+
+            if(currentChargeLevel == 100)
+            {
+                Console.WriteLine("I'm charged.");
+                return;
+            }
+
+            Console.WriteLine("charging.....");
+        }
+
+        void IWheel.Check()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IWheel.Fix()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IWheel.Change()
+        {
+            throw new NotImplementedException();
         }
     }
 

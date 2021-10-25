@@ -1,3 +1,5 @@
+using static lab1.Program;
+
 namespace lab1
 {
     class Car : Vehicle
@@ -23,6 +25,16 @@ namespace lab1
         public virtual void BeepBeep()
         {
             System.Console.WriteLine("beep beep!!!!");
+        }
+
+        public override void Go()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void Stop()
+        {
+            throw new System.NotImplementedException();
         }
     }
 

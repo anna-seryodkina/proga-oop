@@ -4,16 +4,27 @@ namespace lab1
 {
     class Program
     {
+
         static void Main(string[] args)
         {
-            Console.WriteLine("> [super exclusive tesla car] - { 3 bitcoins }");
-            bool buy = true;
+            Fueller fueller = new Fueller("Mike");
+            GasStation gasStation = new GasStation(fueller);
+            fueller.Fuelling();
 
-            if(buy)
-            {
-                SuperExclusiveTeslaCar car = SuperExclusiveTeslaCar.GetCar();
-                car.BeepBeep();
-            }
+
+
+
+
+
+
+            // Console.WriteLine("> [super exclusive tesla car] - { 3 bitcoins }");
+            // bool buy = true;
+
+            // if(buy)
+            // {
+            //     SuperExclusiveTeslaCar car = SuperExclusiveTeslaCar.GetCar();
+            //     car.BeepBeep();
+            // }
 
 
             // int i = 0;

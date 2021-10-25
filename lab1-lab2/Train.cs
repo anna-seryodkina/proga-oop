@@ -16,6 +16,15 @@ namespace lab1
             this.length = length;
         }
 
+        public override void Go()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Stop()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 
