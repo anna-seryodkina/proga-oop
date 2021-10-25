@@ -2,6 +2,22 @@
 
 namespace lab1
 {
+    class LineNotExistException : Exception
+    {
+        public string Line { get; }
+
+        public LineNotExistException(){}
+
+        public LineNotExistException(string message) : base(message){}
+
+        public LineNotExistException(string message, Exception innerException) : base(message, innerException){}
+
+        public LineNotExistException(string message, string st) : this(message)
+        {
+            Line = st;
+        }
+    }
+
     class Program
     {
 
@@ -12,6 +28,36 @@ namespace lab1
             fueller.Fuelling();
 
 
+
+            try
+            {
+                Subway subway = new Subway();
+                subway.CurrentStation = "station1";
+            }
+            catch (LineNotExistException ex)
+            {
+                Console.WriteLine(ex.Message + $"[{ex.Line}]");
+            }
+
+
+            try
+            {
+                try
+                {
+                    Subway subway = new Subway();
+                    subway.CurrentStation = "station1";
+                }
+                catch(LineNotExistException ex)
+                {
+                    Console.WriteLine(ex.Message + $"[{ex.Line}]");
+                    throw ex;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("exception happened.");
+                Console.WriteLine(ex.StackTrace);
+            }
 
 
 

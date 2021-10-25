@@ -37,6 +37,7 @@ namespace lab1
                         currentStation = value;
                     }
                 }
+                throw new LineNotExistException("Line does not exist: ", line);
             }
         }
 
