@@ -2,24 +2,13 @@
 
 namespace lab1
 {
-    class LineNotExistException : Exception
+
+    static class Program
     {
-        public string Line { get; }
-
-        public LineNotExistException(){}
-
-        public LineNotExistException(string message) : base(message){}
-
-        public LineNotExistException(string message, Exception innerException) : base(message, innerException){}
-
-        public LineNotExistException(string message, string st) : this(message)
+        static string NewMethod(this SuperExclusiveTeslaCar obj)
         {
-            Line = st;
+            return $"I'm {obj.color} {obj.carBrand}. I'm super cool.";
         }
-    }
-
-    class Program
-    {
 
         static void Main(string[] args)
         {
@@ -63,14 +52,17 @@ namespace lab1
 
 
 
-            // Console.WriteLine("> [super exclusive tesla car] - { 3 bitcoins }");
-            // bool buy = true;
+            Console.WriteLine("> [super exclusive tesla car] - { 3 bitcoins }");
+            bool buy = true;
 
-            // if(buy)
-            // {
-            //     SuperExclusiveTeslaCar car = SuperExclusiveTeslaCar.GetCar();
-            //     car.BeepBeep();
-            // }
+            if(buy)
+            {
+                SuperExclusiveTeslaCar car = SuperExclusiveTeslaCar.GetCar();
+                car.BeepBeep();
+                Func<SuperExclusiveTeslaCar, string> extention = NewMethod;
+
+                Console.WriteLine(extention);
+            }
 
 
             // int i = 0;
