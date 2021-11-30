@@ -33,7 +33,7 @@ namespace task1
             build3.Add(fl4);
         
 
-            district.GetInfo();
+            district.CountPeople();
             district.Display(2);
             Console.ReadKey();
         }
@@ -52,7 +52,7 @@ namespace task1
 
         public abstract void Add(ResidentalComponent c);
         public abstract void Remove(ResidentalComponent c);
-        public abstract int GetInfo();
+        public abstract int CountPeople();
         public abstract void Display(int depth);
         
     }
@@ -89,12 +89,12 @@ namespace task1
         }
 
 
-        public override int GetInfo()
+        public override int CountPeople()
         {
             this.people = 0;
             foreach (ResidentalComponent component in _children)
             {
-                this.people += component.GetInfo();
+                this.people += component.CountPeople();
             }            
             return this.people;
         }
@@ -125,7 +125,7 @@ namespace task1
             Console.WriteLine(new String('-', depth) + name + " " + people.ToString());
         }
 
-        public override int GetInfo()
+        public override int CountPeople()
         {
             return this.people;
         }
